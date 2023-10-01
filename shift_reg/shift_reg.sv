@@ -1,3 +1,5 @@
+// 移位寄存器通用模板
+
 module shift_reg #(parameter 
     STAGE = 4,
     WIDTH = 8
