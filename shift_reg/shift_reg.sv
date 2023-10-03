@@ -14,8 +14,8 @@ logic   [WIDTH-1:0] ffs [STAGE];
 
 integer i;
 always_ff @(posedge clk) begin
-    ffs[0] <= in_data;
-    for(i = 0; i < STAGE; i = i+1) begin
+    ffs[0] <= din;
+    for(i = 1; i < STAGE; i = i+1) begin
         ffs[i] <= ffs[i-1];
     end
 end
