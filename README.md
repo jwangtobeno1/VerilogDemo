@@ -19,3 +19,13 @@ Some examples of design units
 - Ping Pong buffer
 - Req & Ack
 - Round robin arbiter
+- shift_reg
+- Skid buffer
+- Sort
+- Sqrt
+- Traffic light
+- Uart
+- Width convert
+- Serial to paraller
+
+
