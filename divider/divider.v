@@ -1,6 +1,6 @@
 module divider_cell#(parameter
-    N=5,
-    M=3
+    N = 5,
+    M = 3
 )(
     input                     clk,
     input                     rstn,

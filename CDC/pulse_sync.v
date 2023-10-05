@@ -18,18 +18,17 @@ always @(posedge clka or negedge rst_n) begin
         toggle <= toggle;
 end
 
-reg toggle_sync1;
-reg toggle_sync2;
-reg toggle_sync3;
+(*async_reg = "true"*)reg [2:0] toggle_sync;
+
 always @(posedge clkb or negedge rst_n) begin
     if(!rst_n) begin
-        toggle_sync1 <= 1'b0;
-        toggle_sync2 <= 1'b0;
-        toggle_sync3 <= 1'b0;
+        toggle_sync[0] <= 1'b0;
+        toggle_sync[1] <= 1'b0;
+        toggle_sync[2] <= 1'b0;
     end else begin
-        toggle_sync1 <= toggle;
-        toggle_sync2 <= toggle_sync1;
-        toggle_sync3 <= toggle_sync2;
+        toggle_sync[0] <= toggle;
+        toggle_sync[1] <= toggle_sync[0];
+        toggle_sync[2] <= toggle_sync[1];
     end
 end
 
@@ -37,7 +36,7 @@ always @(posedge clkb or negedge rst_n) begin
     if(!rst_n)
         dout <= 1'b0;
     else
-        dout <= toggle_sync3 ^ toggle_sync2; 
+        dout <= toggle_sync[2] ^ toggle_sync[1]; 
 end
 
 
