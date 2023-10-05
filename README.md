@@ -27,5 +27,6 @@ Some examples of design units
 - Uart
 - Width convert
 - Serial to paraller
+- Clock times(时钟倍频)
 
 
