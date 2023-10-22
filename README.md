@@ -7,7 +7,7 @@ Some examples of design units
 - - edge detect
 - - fast to slow
 - - pulse sync
-- clock switch 
+- clock switch(无毛刺切换)
 - counter
 - divider 
 - FIFO
